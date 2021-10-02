@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>利用页面中的<input>元素输入，利用页面中的<output>元素输出。</title>
+    <script>
+        function run() {
+            var length = document.getElementById('length').value;
+            var width = document.getElementById('width').value;
+            document.getElementById("girth").value = parseFloat((length * 2 + width * 2).toFixed(2));
+            document.getElementById("area").value = parseFloat((length * width).toFixed(2));
+        }
+    </script>
+</head>
+<body>
+<input id="length" placeholder="请在此输入长方形的长度" type="text" value=""/><br><br>
+<input id="width" placeholder="请在此输入长方形的宽度" type="text" value=""/><br><br>
+<p>周长:
+    <output id="girth" style="color:red; font-size:50px"></output>
+</p>
+<p>面积:
+    <output id="area" style="color:red; font-size:50px"></output>
+</p>
+<input onclick="run()" type="button" value="计算">
+</body>
+</html>
